@@ -25,7 +25,7 @@ class TTSManager:
     def initialize_tts(self) -> TTS:
         if self._tts_model is None:
             logger.info("Initializing TTS...")
-            self._tts_model = TTS(model_name="tts_models/en/ljspeech/glow-tts", progress_bar=False, gpu=False)
+            self._tts_model = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC_ph", progress_bar=False, gpu=False)
             logger.info("TTS model initialized and cached.")
         else:
             logger.info("Using cached TTS model.")
@@ -44,7 +44,7 @@ def create_app() -> Flask:
                 raise werkzeug.exceptions.BadRequest("No text provided for synthesis")
 
             text = data['text']
-            speed = data.get('speed', 4.0)
+            speed = data.get('speed', 1.0)
 
             if not isinstance(text, str) or len(text.strip()) == 0:
                 raise werkzeug.exceptions.BadRequest("Invalid text provided for synthesis")
