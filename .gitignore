@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environments
+venv/
+.venv/
+.env
+
+# Poetry
+#poetry.lock
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Byte-compiled and intermediate Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Test output
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment variables
+.env
+*.env
+
+# Local config files
+.vscode/
+.idea/
+
+# Flask and Gunicorn
+instance/
+*.pid
+
+# Temp files
+*.swp
+*.swo
+*.tmp
+
+# Generated audio files
+*.wav
+*.mp3
+
+# Cache files
+*.egg-info/
+.eggs/
+
+# Docker
+*.env
+.dockerignore
+docker-compose.yml
+
+# System-specific files
+Thumbs.db
+*.bak
+
+# Obsidian or Markdown workspace files (in case notes are included)
+.obsidian/
+*.md~
+
+# Ansible roles and collections
+*.retry
+
+# Build artifacts
+build/
+dist/
+*.egg
+
+# Project-specific
+/mnt/
+/run/
+/temp/
+/output/
+/snapshots/
+
+.history/

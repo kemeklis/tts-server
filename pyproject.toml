@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "tts-server"
+version = "0.1.0"
+description = "A Flask-based server providing text-to-speech functionality with real-time clipboard integration, allowing clients to synthesize text into speech and play it directly using local audio devices. Includes RESTful API endpoints for text synthesis, playback control, and audio status."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://kemeklis.com"
+repository = "https://github.com/kemeklis/tts-server"
+keywords = ["text-to-speech", "TTS", "Flask", "Python", "API"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: Flask",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+flask = "2.3.3"
+numpy = "1.22.0"
+soundfile = "0.12.1"
+TTS = "0.22.0"
+requests = "2.32.3"
+sounddevice = "0.4.7"
+werkzeug = "3.0.3"
+
+[tool.poetry.scripts]
+tts-server = "tts_server.server:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
