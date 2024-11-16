@@ -16,7 +16,9 @@ get_clipboard_content() {
 # Function to send text to TTS server for synthesis
 synthesize_text() {
     local text="$1"
-    curl -X POST "${TTS_SYNTHESIZE_ENDPOINT}" -H "Content-Type: application/json" -d "{\"text\": \"${text}\"}"
+    # Use jq to safely encode the text into valid JSON
+    json_payload=$(jq -n --arg text "$text" '{text: $text}')
+    curl -X POST "${TTS_SYNTHESIZE_ENDPOINT}" -H "Content-Type: application/json" -d "${json_payload}"
 }
 
 # Function to stop TTS playback
